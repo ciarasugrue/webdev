@@ -1,0 +1,28 @@
+<%- include("top") %>
+<header class="d-flex justify-content-end mb-4">
+    <a href="/logout" class="btn btn-danger">Logout</a>
+</header>
+<main class="container">
+    <% userstuff.forEach((user) => { %>
+        <h2 class="mb-4"><%= user.user_name %>'s Collection</h2>
+    <% }); %>
+    <div class="row">
+        <% albumstuff.forEach((album) => { %>
+            <div class="col-md-3 mb-4">
+                <div class="card dashboard-card">
+                    <a href="/vinyl?vid=<%= album.album_id %>">
+                        <img class="card-img-top" src="<%= album.album_artwork_url %>" alt="<%= album.album_name %>">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= album.album_name %></h5>
+                        <p class="card-text"><%= album.year %></p>
+                        <a href="/vinyl?vid=<%= album.album_id %>" class="btn btn-primary">View Vinyl</a>
+                        <a href="/delete?aid=<%= album.album_id %>" class="btn btn-danger">Delete Vinyl</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<%- include("top") %>
+<div class="container my-5">
+  <h1 class="text-center mb-4">StacksOfWax Library</h1>
+  <div class="d-flex justify-content-end mb-3">
+    <a href="/logout" class="btn btn-danger">Logout</a>
+  </div>
+  <div class="row">
+    <% albumdata.forEach((album) => { %>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <a href="/vinyl?vid=<%= album.album_id %>">
+          <img src="<%= album.album_artwork_url %>" class="card-img-top" alt="<%= album.album_name %>">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title"><a href="/vinyl?vid=<%= album.album_id %>"><%= album.album_name %></a></h5>
+          <p class="card-text">Released: <%= album.album_year %></p>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>
+</body>
+</html>

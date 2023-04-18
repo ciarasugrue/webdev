@@ -1,0 +1,28 @@
+<%- include("top") %>
+
+<section class="container my-5">
+    <h2 class="text-center mb-4">
+        login to StacksOfWax to view and edit your collection, review other user's collections, and more!
+    </h2>
+</section>
+<main class="container d-flex justify-content-center">
+    <div class="card p-4">
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="usernameField">Username:</label>
+                <input type="text" class="form-control" id="usernameField" name="usernameField" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="passwordField">Password:</label>
+                <input type="password" class="form-control" id="passwordField" name="passwordField" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+             <p class="register-link">
+            Not a member? Join StacksOfWax today! 
+        </p>
+        <a href="/register" class="btn btn-primary">Register Here</a>
+        </form>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<%- include("top") %>
+<main>
+    
+    <% row.forEach( (album)=> { %> 
+    <form  method="POST">
+
+        <input type="hidden" name="id_field" value="<%= album.album_collection_id %>">
+        <button>Delete</button>
+    </form>
+<% }); %>
+</main>
+
+</body>
+</html>

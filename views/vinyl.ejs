@@ -1,0 +1,34 @@
+<%- include("top") %>
+        <div class="container">
+            <% albumdeets.forEach( (album) => { %>
+                <div class="simplecard">
+                    <h1> 
+                        <%= album.album_name %>
+                    </h1>
+                    
+                        <div>
+                            <img src="<%= album.album_artwork_url %>" href="/vinyl">
+                        </div>
+                        <div> 
+                            <%= album.artist_name %>
+                        </div>
+                        <div>
+                            <%= album.year %>
+                        </div>
+                        <h2>
+                            TRACKLIST
+                        </h2>
+                        <div>
+                            <% albumtracks.forEach ( (track)=> { %>
+                                <div>
+                                    <%= track.track_name %>
+                                </div>
+                          <%  }); %>
+                        </div>
+                </div>
+          <%  }); %>
+        </div>
+        <a href="/collection">BACK</a>
+    </body>
+  
+</html>
